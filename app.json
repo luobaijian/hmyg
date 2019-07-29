@@ -16,8 +16,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "黑马优购",
+    "navigationBarBackgroundColor": "#e74e53",
+    "navigationBarTitleText": "优购",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
