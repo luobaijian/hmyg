@@ -2,11 +2,13 @@
 Page({
   data: {
     swiperList: [],
-    navCateList: []
+    navCateList: [],
+    floorList: []
   },
   onLoad() {
     this.getSwiperList()
     this.getCateList()
+    this.getFloorData()
   },
   //请求轮播图数据
   getSwiperList() {
@@ -25,12 +27,24 @@ Page({
     wx.request({
       url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
       success: (result) => {
-        console.log(result.data.message);
         this.setData({
           navCateList: result.data.message
         })
       },
 
+    });
+
+  },
+  // 请求楼层数据
+  getFloorData() {
+    wx.request({
+      url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
+      success: (result) => {
+        console.log(result.data.message);
+        this.setData({
+          floorList: result.data.message
+        })
+      },
     });
 
   }

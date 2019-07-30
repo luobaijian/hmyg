@@ -15,3 +15,18 @@
     <image src="{{item.image_src}}" mode="widthFix" />
   </navigator>
 </view>
+<!-- 楼层数据 -->
+<view class="index-floor">
+  <view class="floor-item" wx:for="{{floorList}}" wx:for-index="index1" wx:for-item="item1" wx:key="item">
+    <!-- 标题开始 -->
+    <view class="floor-title">
+      <image src="{{item1.floor_title.image_src}}" mode="widthFix" />
+    </view>
+    <!-- 图片内容开始 -->
+    <view class="floor-list">
+      <navigator class="floor-goods" wx:for="{{item1.product_list}}" wx:for-index="index2" wx:for-item="item2" wx:key="item">
+        <image src="{{item2.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}" />
+      </navigator>
+    </view>
+  </view>
+</view>
