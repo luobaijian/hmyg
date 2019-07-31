@@ -5,10 +5,16 @@
   <!-- 左侧分类展示区域 -->
   <scroll-view scroll-y class="left_menu">
     <view class="menu_item {{currentIndex===index?'active':''}}" 
-    wx:for="{{leftMenuList}}" wx:key="cat_id">{{item.cat_name}}</view>
+    wx:for="{{leftMenuList}}" 
+    wx:key="cat_id"
+    bindtap="handleMEnuChange"
+    data-index="{{index}}"
+    >
+    {{item.cat_name}}
+    </view>
   </scroll-view>
   <!-- 右侧分类展示区域 -->
-  <scroll-view scroll-y class="right_content">
+  <scroll-view scroll-y class="right_content" scroll-top="{{scrollTop}}">
     <view class="goods_group" wx:for="{{rightMenuList}}" wx:key="item" wx:for-index="index1" wx:for-item="item1">
       <!-- 右侧标题部分 -->
       <view class="goods_title">

@@ -8,8 +8,7 @@
 }
 .cate_container .left_menu .menu_item {
   border-top: 2rpx solid #ccc;
-  color: #000;
-  font-size: 30rpx;
+  font-size: 28rpx;
   padding: 15rpx 0;
   text-align: center;
 }
