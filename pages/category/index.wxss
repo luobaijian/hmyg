@@ -1,1 +1,51 @@
-/* pages/category/index.wxss */
+/* pag.es/category/index.wxss */
+.cate_container {
+  display: flex;
+  height: calc( 100vh - 90rpx);
+}
+.cate_container .left_menu {
+  flex: 1;
+}
+.cate_container .left_menu .menu_item {
+  border-top: 2rpx solid #ccc;
+  color: #000;
+  font-size: 30rpx;
+  padding: 15rpx 0;
+  text-align: center;
+}
+.cate_container .right_content {
+  flex: 4;
+}
+.cate_container .right_content .goods_group .goods_title {
+  margin-top: 30rpx;
+  font-size: 35rpx;
+  text-align: center;
+}
+.cate_container .right_content .goods_group .goods_title .delimiter {
+  padding: 0 20rpx;
+  color: #ccc;
+}
+.cate_container .right_content .goods_group .goods_title .goods_group_title {
+  color: #000;
+  margin: 0 5rpx;
+}
+.cate_container .right_content .goods_group .goods_list {
+  display: flex;
+  margin: 40rpx 0;
+  flex-wrap: wrap;
+}
+.cate_container .right_content .goods_group .goods_list navigator {
+  width: 33.33%;
+  text-align: center;
+}
+.cate_container .right_content .goods_group .goods_list navigator image {
+  width: 50%;
+}
+.cate_container .right_content .goods_group .goods_list navigator .goods_name {
+  color: #000;
+  font-size: 28rpx;
+}
+.active {
+  color: var(--themeColor);
+  border-left: 5rpx solid red;
+}

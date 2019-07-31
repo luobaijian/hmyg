@@ -1,8 +1,14 @@
 // pages/index/index.js
+import {
+  request
+} from "../../request/index.js";
 Page({
   data: {
+    // 轮播图数据
     swiperList: [],
+    // 分类导航
     navCateList: [],
+    // 楼层数据
     floorList: []
   },
   onLoad() {
@@ -12,40 +18,36 @@ Page({
   },
   //请求轮播图数据
   getSwiperList() {
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata',
-      success: (result) => {
+    request({
+        url: '/home/swiperdata'
+      })
+      .then(result => {
         this.setData({
-          swiperList: result.data.message
+          swiperList: result
         })
-      },
-    });
+      })
 
   },
   // 请求分类导航数据
   getCateList() {
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
-      success: (result) => {
+    request({
+        url: '/home/catitems'
+      })
+      .then(result => {
         this.setData({
-          navCateList: result.data.message
+          navCateList: result
         })
-      },
-
-    });
-
+      })
   },
   // 请求楼层数据
   getFloorData() {
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
-      success: (result) => {
-        console.log(result.data.message);
+    request({
+        url: '/home/floordata'
+      })
+      .then(result => {
         this.setData({
-          floorList: result.data.message
+          floorList: result
         })
-      },
-    });
-
+      })
   }
 })
